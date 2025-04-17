@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Set the test options file.
-export TEST_OPTIONS_FILE=
-
 # Set the test path.
 TEST_PATH="test.ui"
 

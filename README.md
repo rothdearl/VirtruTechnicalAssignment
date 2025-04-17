@@ -77,6 +77,15 @@ project root directory.
 * **GMAIL_LOGIN_EMAIL**: The login email.
 * **GMAIL_LOGIN_PASSWORD**: The login password.
 
+The Virtru Technical Assignment project uses `ini` files, also known as `option files`, to configure and customize the
+tests. For example, which browser to use, whether to run headless, whether to enable screenshots, etc. This file is
+optional and if not provided, a default one is used. Option files are to be saved in the `ini` directory and can be set
+via an environment variable:
+
+* **TEST_OPTIONS_FILE**: The test options file to load.
+
+The simplest method is to put it in the `.env` file in the project root directory.
+
 ### Running the Tests
 
 To run a group of tests from the command line, use the `run-tests` script from the `scripts` directory.

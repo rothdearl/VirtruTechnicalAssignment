@@ -3,9 +3,6 @@
 :: Store variables locally.
 setlocal
 
-:: Set the test options file.
-set TEST_OPTIONS_FILE=
-
 :: Set the test path.
 set TEST_PATH=test.ui
 
