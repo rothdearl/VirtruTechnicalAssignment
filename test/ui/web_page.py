@@ -1,3 +1,4 @@
+import os
 from abc import ABC, abstractmethod
 from typing import final
 
@@ -25,7 +26,7 @@ class WebPage(ABC):
         Returns the absolute path to the page.
         :return: The absolute path to the page.
         """
-        return UIGlobals.host + self.path
+        return os.path.join(UIGlobals.host, self.path)
 
     @final
     @property
