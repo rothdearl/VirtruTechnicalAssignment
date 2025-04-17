@@ -74,8 +74,8 @@ The Virtru Technical Assignment project is expecting two environment variables t
 can set these variables using a variety of methods, but the simplest method is to put them in a `.env` file in the
 project root directory.
 
-* **LOGIN_EMAIL**: The login email.
-* **LOGIN_PASSWORD**: The login password.
+* **GMAIL_LOGIN_EMAIL**: The login email.
+* **GMAIL_LOGIN_PASSWORD**: The login password.
 
 ### Running the Tests
 

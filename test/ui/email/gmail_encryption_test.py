@@ -24,6 +24,6 @@ class GmailEncryptionTest(unittest.TestCase):
 
         # Navigate to Gmail and log in.
         gmail.navigate_to()
-        gmail.log_in(os.getenv("LOGIN_EMAIL"), os.getenv("LOGIN_PASSWORD"))
+        gmail.log_in(os.getenv("GMAIL_LOGIN_EMAIL"), os.getenv("GMAIL_LOGIN_PASSWORD"))
 
         TestUtils.pause_test(5, message="Pausing to demonstrate Gmail is being blocked.")
