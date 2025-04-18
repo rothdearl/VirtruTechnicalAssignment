@@ -3,8 +3,8 @@ from typing import final
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
-from test.ui import WebElementUtils, WebPage
-from test.util import TestUtils
+from test.ui import WebPage
+from test.ui.util import WebElementUtils
 
 
 @final
@@ -19,8 +19,7 @@ class GmailPage(WebPage):
         """
         super().__init__("https://mail.google.com/mail/")
 
-    @staticmethod
-    def log_in(email: str, password: str) -> None:
+    def log_in(self, email: str, password: str) -> None:
         """
         Logs in to Gmail.
         :param email: The email to log in with.
@@ -29,14 +28,30 @@ class GmailPage(WebPage):
         """
         email_field = WebElementUtils.find_element(By.TAG_NAME, "input")
 
-        WebElementUtils.send_keys(email_field, email)
+        WebElementUtils.send_keys(email_field, email, hide_log_output=True)
         WebElementUtils.send_keys(email_field, Keys.ENTER)
 
         # FIXME: Gmail is preventing the next step in the log in process.
+        # TODO: Enter password and submit.
 
-    def wait_for_page_to_load(self) -> None:
+    def open_email(self, *, row: int = 0) -> None:
         """
-        Waits for the page to load.
+        Opens an email.
+        :param row: The row number corresponding to the email to open.
         :return: None
         """
-        TestUtils.pause_test(1, message=f"Loading {self.absolute_path}")
+        # TODO: Select the email corresponding to the row number.
+
+    def send_email(self, *, to: str, subject: str, message: str, enable_email_protection: bool = False) -> None:
+        """
+        Composes and sends a new email.
+        :param to: The email recipient.
+        :param subject: The email subject.
+        :param message: The email message.
+        :param enable_email_protection: Whether to enable email protection.
+        :return: None
+        """
+        # TODO: Compose a new email.
+        # TODO: Enter the recipient, subject and message.
+        # TODO: Enable email protection?
+        # TODO: Send email.

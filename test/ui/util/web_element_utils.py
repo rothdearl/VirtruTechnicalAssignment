@@ -189,16 +189,30 @@ class WebElementUtils:
         TestUtils.pause_test(seconds, message="Waiting for page to load...")
 
     @staticmethod
-    def send_keys(element: WebElement, keys: str) -> None:
+    def refresh_page(*, seconds: int = 0) -> None:
+        """
+        Refreshes the current page.
+        :param seconds: The number of seconds to pause.
+        :return: None
+        """
+        Logger.info(f"Refreshing page: {Test.webdriver.current_url}")
+        Test.webdriver.refresh()
+        TestUtils.pause_test(seconds, message="Waiting for page to refresh...")
+        Logger.info("Page refreshed.")
+
+    @staticmethod
+    def send_keys(element: WebElement, keys: str, *, hide_log_output: bool = False) -> None:
         """
         Sends the keys to the element.
         :param element: The element to send the keys to.
         :param keys: The keys to send.
+        :param hide_log_output: Whether to hide the log output for the keys sent.
         :return: None
         """
         info = WebElementUtils.get_element_info(element)
+        output = "#" if hide_log_output else repr(keys)
 
-        Logger.info(f"Sending keys [{repr(keys)}] to: {info}")
+        Logger.info(f"Sending keys [{output}] to: {info}")
         WebElementUtils.wait_for_element(element)
         element.send_keys(keys)
         Logger.info(f"Keys sent to: {info}")

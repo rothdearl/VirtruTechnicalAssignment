@@ -16,7 +16,7 @@ The Virtru Technical Assignment project is built with the following set of techn
 
 ### System Requirements
 
-Python is required in order to install dependencies and run the script. You can download
+Python is required in order to install dependencies and run the test script. You can download
 it [here](https://www.python.org/downloads/). To test the installation, run the following commands:
 
 **Mac/Linux:**
@@ -53,8 +53,8 @@ All required dependencies can be installed by running the following command from
 setup.bat
 ```
 
-If errors regarding an "externally-managed-environment" occur during setup, pass `--break-system-packages` as a
-parameter to the script. Example:
+Dependencies are installed in the user packages but if and error regarding an "externally-managed-environment" occurs
+during setup, pass `--break-system-packages` as a parameter to the script. Example:
 
 **Mac/Linux:**
 
