@@ -1,0 +1,33 @@
+pipelines:
+  custom:
+    test-automation:
+      - variables:
+          - name: Group
+            default: ui
+            description: Select the test group
+            allowed-values:
+              - encryption
+              - gmail
+              - ui
+      - step:
+          name: Setup Virtru UI tests
+          image:
+              name: joyzoursky/python-chromedriver
+          caches:
+            - virtru
+          script:
+            - ./scripts/setup.sh
+      - step:
+          name: Run Virtru UI tests
+          image:
+              name: joyzoursky/python-chromedriver
+          caches:
+            - virtru
+          script:
+            - ./scripts/run-tests.sh ${Group}
+  branches:
+    main:
+      - step:
+          name: Code Check-in
+          script:
+            - echo "Code check-in only; no build required."
