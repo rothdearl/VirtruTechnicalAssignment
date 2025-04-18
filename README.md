@@ -53,8 +53,8 @@ All required dependencies can be installed by running the following command from
 setup.bat
 ```
 
-Dependencies are installed in the user packages but if and error regarding an "externally-managed-environment" occurs
-during setup, pass `--break-system-packages` as a parameter to the script. Example:
+Dependencies are installed as user packages but if an error regarding an "externally-managed-environment" occurs during
+setup, pass `--break-system-packages` as a parameter to the script. Example:
 
 **Mac/Linux:**
 
